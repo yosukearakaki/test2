@@ -1,0 +1,14 @@
+<%= form_for(@tweet, url: choose_new_or_edit) do |f| %>
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2>ツイートは1~140文字で入力してください。</h2>
+    </div>
+  <% end %>
+
+  <%= f.label :内容 %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <br>
+  <%= f.submit 'ツイート', class: 'btn btn-primary btn-block' %>
+<% end %>
+<br>
+<%= link_to "ツイート一覧画面にもどる", tweets_path %>
